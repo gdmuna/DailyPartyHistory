@@ -1,0 +1,19 @@
+{
+  "name": "daily-api",
+  "version": "1.0.0",
+  "description": "Back-END of DailyPartyHistory",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/app.js",
+    "lint": "eslint"
+  },
+  "keywords": [
+    "api",
+    "database"
+  ],
+  "author": "Seele.Clover",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
