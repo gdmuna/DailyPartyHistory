@@ -1,0 +1,18 @@
+### index
+GET http://127.0.0.1:6666
+
+
+
+### API-info
+GET http://127.0.0.1:6666/info
+
+
+
+### DailyContent
+POST http://127.0.0.1:6666/DailyContent
+Content-Type: application/json
+
+{
+    "month": 4,
+    "day": 28
+}
