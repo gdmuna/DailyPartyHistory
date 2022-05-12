@@ -8,11 +8,16 @@ GET http://127.0.0.1:6666/info
 
 
 
-### DailyContent
-POST http://127.0.0.1:6666/DailyContent
+### cpcContent
+POST http://127.0.0.1:6666/cpcContent
 Content-Type: application/json
 
 {
-    "month": 4,
-    "day": 28
+    "month": 5,
+    "day": 4
 }
+
+
+
+### ccylContent
+POST http://127.0.0.1:6666/ccylContent
