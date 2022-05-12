@@ -30,7 +30,9 @@ app.all('*', function (req, res, next) {
  * @return {}
  */
 app.all('/', function (req, res) {
-    res.json("Welcome to 'Daily Party History' ! Here is our Back-End's apis.");
+    //res.json("Welcome to 'Daily Party History' ! Here is our Back-End's apis.");
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile('public/index.html', { root: __dirname + "/../" });
     console.log('API home page visited.');
 })
 

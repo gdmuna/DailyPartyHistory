@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>今日党史</title>
+</head>
+
+<body>
+
+    <p id="daily-content"><a id="daily-content_text" href="#" style="text-decoration: none; color: #000;">:D 获取中...</a></p>
+    <script src="http://127.0.0.1:6666/info" type="text/javascript"></script>
+    <script  type="text/javascript">
+        var current_date = new Date(); // 定义当前日期，类型是Object
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://127.0.0.1:6666/DailyContent', true);
+        xhr.setRequestHeader("Content-type","application/json");
+        xhr.send(JSON.stringify({month: current_date.getMonth() + 1, day: current_date.getDate()})); // getMonth() - 获取当前月份(0-11, 0代表1月); getDate() - 获取当前日(1-31)
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText); // 解析服务器返回的数据
+                    document.getElementById('daily-content_text').innerHTML = response.content; // 修改对应id的标签的内容
+                } else {
+                    console.log('Error: ' + xhr.status);
+                }
+            }
+        };
+    </script>
+
+</body>
+</html>
